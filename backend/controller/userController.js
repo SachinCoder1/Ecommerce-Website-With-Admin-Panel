@@ -101,6 +101,15 @@ const userCtrl = {
         }
         
     },
+
+    // Get User Details
+    getUser: async (req, res) => {
+        try {
+            const user = await Users.findById(req.user.id).select('-password')
+        } catch (error) {
+            return res.status(500).json({msg: err.message})
+        }
+    }
        
  }
 
