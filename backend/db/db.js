@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-require('env').config()
+require('dotenv').config()
 // const mongoURI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.0bwxa.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-const mongoURI = 'mongodb://localhost:27017/inotebook?readPreference=primary&appname=MongoDB%20Compass&ssl=false'
+const mongoURI = process.env.MONGO_URI;
 
 
 
@@ -12,6 +12,6 @@ const connectToMongo = async () => {
     } catch (error) {
         console.log('there is error while connection to mongo', error)
     }
-}
+} 
 
-export default connectToMongo
+module.exports = connectToMongo
