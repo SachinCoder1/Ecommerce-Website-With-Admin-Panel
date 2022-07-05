@@ -19,6 +19,7 @@ app.use(cookieParser());
 // app.use("/api/auth", require("./routes/auth"));
 app.use("/api/user", require("./routes/userRoutes"));
 app.use("/api/v1", require("./routes/categoryRoutes"));
+app.use("/api/v1", require("./routes/categoryRoutes"));
 
 app.get('/', (req, res) => {
   res.send('Hello ashley!')
